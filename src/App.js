@@ -41,7 +41,7 @@ const App = () => {
             alignItems: "center",
           }}
         >
-          <Title style={{ color: "white " }}>Next AI</Title>
+          <Title style={{ color: "white " }}>AiPDF</Title>
         </Header>
         <Content style={{ width: "80%", margin: "auto" }}>
           <div style={pdfUploaderStyle}>
