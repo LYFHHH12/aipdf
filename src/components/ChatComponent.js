@@ -128,7 +128,7 @@ const ChatComponent = (props) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.get(`${DOMAIN}/chat`, {
+      const response = await axios.get(`/chat`, {
         params: {
           question,
         },

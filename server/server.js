@@ -3,6 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import multer from "multer"; // Import multer
 import chat from "./chat.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
 
@@ -33,6 +37,7 @@ app.get("/chat", async (req, res) => {
   const resp = await chat(filePath, req.query.question); // Pass the file path to your main function
   res.send(resp.text);
 });
+app.use(express.static(path.join(__dirname, "static")));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
