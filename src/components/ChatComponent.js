@@ -18,13 +18,11 @@ const searchContainer = {
 
 const ChatComponent = (props) => {
   const { handleResp, isLoading, setIsLoading } = props;
-  // Define a state variable to keep track of the search value
   const [searchValue, setSearchValue] = useState("");
   const [isChatModeOn, setIsChatModeOn] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [speech, setSpeech] = useState();
 
-  // speech recognation
   const {
     transcript,
     listening,
@@ -65,7 +63,7 @@ const ChatComponent = (props) => {
     speech
       .speak({
         text: what2say,
-        queue: false, // current speech will be interrupted,
+        queue: false, 
         listeners: {
           onstart: () => {
             console.log("Start utterance");
@@ -87,7 +85,6 @@ const ChatComponent = (props) => {
         },
       })
       .then(() => {
-        // if everyting went well, start listening again
         console.log("Success !");
         userStartConvo();
       })
@@ -146,7 +143,6 @@ const ChatComponent = (props) => {
   };
 
   const handleChange = (e) => {
-    // Update searchValue state when the user types in the input box
     setSearchValue(e.target.value);
   };
 
